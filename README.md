@@ -7,8 +7,8 @@
 post to https://psp_frontend.threedsv2-qa.paynetworx.net/upload with the following body
 ```json
 {
-    "acctId":"unique id for the transaction"
-    "acctNumber:"card PAN"
+    "acctId":"unique id for the transaction",
+    "acctNumber" :"card PAN"
 }
 ```
 and Authorization header (same header and credentials you use for authorizing transactions).
@@ -51,7 +51,7 @@ send transaction to paynetworx auth endpoing with the additional 3ds data. examp
 ```json
  {
     "Amount": {
-      "Total": '12.00',
+      "Total": "12.00",
       "Tax": 0.25,
       "Currency": "USD"
     },
@@ -66,7 +66,7 @@ send transaction to paynetworx auth endpoing with the additional 3ds data. examp
               "ExpMonth": "00",
               "ExpYear": "00"
           },
-          3DSecure:{
+          "3DSecure":{
                 "AuthenticationValue":"authenticationValue from phase 3",
                 "ECommerceIndicator": "eci from phase 4",
                 "3DSecureTransactionID":"splitSdkServerTransId  from phase 3"
