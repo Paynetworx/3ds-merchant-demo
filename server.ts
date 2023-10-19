@@ -1,7 +1,16 @@
-import express, { Express, Request, Response } from 'express';
+import express, { Request, Response } from 'express';
 import fetch from "node-fetch"
 import { v4 } from "uuid"
-import { config } from './config'
+import { readFileSync } from 'fs'
+
+const config = JSON.parse(readFileSync("./config.json", "utf-8")) as {
+  backend_url:string
+  auth_url:string
+  credentials:{
+    username:string
+    password:string
+  }
+}
 
 const AUTHORIZATION_HEADER=`Basic ${btoa(config.credentials.username + ':' + config.credentials.password)}`
     
