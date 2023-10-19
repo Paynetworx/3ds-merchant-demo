@@ -3,6 +3,26 @@
 
 ##  overview
 
+## setup
+
+### depedencies
+1. bun [install](https://bun.sh/docs/installation)
+2. download msignia usdk script and put into dist folder. talk to your paynetworx rep to get this script
+
+### Running the demo
+PLEASE NOTE: this is for demo purposes only, do not run real live cards through this systems. Also the code does not have all error handling and features a full production setup would need
+1. copy config.example.js to config.js and edit file with credentials and urls: your paynetworx rep can provide these for you. 
+1. start server
+```bash
+npm run serve
+```
+2. start bundler
+```bash
+npm run watch
+```
+3. go to localhost:8080
+
+
 ### phase 1: Merchant Backend, Upload Data
 post to https://psp_frontend.threedsv2-qa.paynetworx.net/upload with the following body
 ```json
