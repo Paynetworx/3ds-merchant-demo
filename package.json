@@ -1,0 +1,24 @@
+{
+  "name": "3dvs_test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "serve": "http-server ./dist/",
+    "watch": "bun build --watch index.ts --outdir dist/"
+  },
+  "author": "",
+  "type": "module",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.17.20",
+    "@types/uuid": "^9.0.6",
+    "currency-codes": "^2.1.0",
+    "express": "^4.18.2",
+    "node-fetch": "^3.3.2",
+    "typescript": "^5.2.2",
+    "uuid": "^9.0.1"
+  }
+}
