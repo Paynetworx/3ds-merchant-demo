@@ -29,7 +29,8 @@ app.post('/api/start', async (req: Request, res: Response) => {
   const account_id = v4()
   const request_body = {
     acctId: account_id,
-    acctNumber:body.PaymentMethod.Card.PAN.PAN
+    acctNumber:body.PaymentMethod.Card.PAN.PAN,
+    challengeWindowSize:"03"
   }
   console.log("request to backend", request_body)
   const result =  await fetch(config.backend_url,{
