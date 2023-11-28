@@ -46,13 +46,13 @@ async function run(){
       exchangeTransactionDetailsUrl: start_body.TransactionDetailUrl,
       transactionResultUrl: start_body.TransactionResultUrl,
       iframeRef: document.getElementById('3ds-iframe') as HTMLIFrameElement,
-      splitSdkServerUrl: "https://meter.threedsv2-qa.paynetworx.net",
+      splitSdkServerUrl: "https://meter.threedsv2-qa.paynetworx.net/split-sdk-client/v1",
       merchantAuthInfo:start_body.AuthToken,
       threeDsData: new ThreeDsData()
         .messageCategory("01")
         .threeDSRequestorAuthenticationInd("01")
         .acctNumber(data.PaymentMethod.Card.PAN.PAN)
-        .email("john@paynetworx.com")
+        .email("tom@paynetworx.com")
         .purchaseDate(util.Now())
           .acctID(start_body.acctId)
           .threeDSRequestorURL(window.location.href)
