@@ -86,7 +86,7 @@ app.post('/api/auth', async (req: Request, res: Response) => {
   const response = await result.json()
   console.log("/api/auth response",response)
   res.setHeader('Content-Type', 'application/json');
-  res.end(JSON.stringify(await result.json()))
+  res.end(JSON.stringify(response))
 });
 
 app.get('/', (req: Request, res: Response) => {

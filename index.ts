@@ -46,7 +46,7 @@ async function run(){
       exchangeTransactionDetailsUrl: start_body.TransactionDetailUrl,
       transactionResultUrl: start_body.TransactionResultUrl,
       iframeRef: document.getElementById('3ds-iframe') as HTMLIFrameElement,
-      splitSdkServerUrl: "https://meter.threedsv2-qa.paynetworx.net/split-sdk-client/v1",
+      splitSdkServerUrl: "https://meter.threedsv2-qa.paynetworx.net",
       merchantAuthInfo:start_body.AuthToken,
       threeDsData: new ThreeDsData()
         .messageCategory("01")
