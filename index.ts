@@ -75,6 +75,15 @@ async function run(){
             cc:"1",
             subscriber:"9186189931"
           })
+          .homePhone({
+            cc:"1",
+            subscriber:"9186189931"
+          })
+          .workPhone({
+            cc:"1",
+            subscriber:"9186189931"
+          })
+          .transType("01")
   };
   const usdk = new ShellThreeDS2Service();
   const initializeSpec = new InitializeSpec();
