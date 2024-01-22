@@ -13,7 +13,6 @@ const config = JSON.parse(readFileSync("./config.json", "utf-8")) as {
 }
 
 const AUTHORIZATION_HEADER=`Basic ${btoa(config.credentials.username + ':' + config.credentials.password)}`
-    
 const app = express();
 const port ="8080";
 
@@ -28,7 +27,7 @@ app.post('/api/start', async (req: Request, res: Response) => {
 
   const account_id = v4()
   const request_body = {
-    acctId: account_id,
+    acctID: account_id,
     acctNumber:body.PaymentMethod.Card.PAN.PAN,
     challengeWindowSize:"03"
   }

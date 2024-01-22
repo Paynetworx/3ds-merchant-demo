@@ -4,7 +4,7 @@ import * as cc from 'currency-codes'
 async function run(){
   const data = {
     "Amount": {
-      "Total": '12.00',
+      "Total": '10.00',
       "Tax": 0.25,
       "Currency": "USD"
     },
@@ -46,19 +46,35 @@ async function run(){
       exchangeTransactionDetailsUrl: start_body.TransactionDetailUrl,
       transactionResultUrl: start_body.TransactionResultUrl,
       iframeRef: document.getElementById('3ds-iframe') as HTMLIFrameElement,
-      splitSdkServerUrl: "https://meter.threedsv2-qa.paynetworx.net/split-sdk-client/v1",
+      splitSdkServerUrl: "<fill in>",
       merchantAuthInfo:start_body.AuthToken,
       threeDsData: new ThreeDsData()
         .messageCategory("01")
         .threeDSRequestorAuthenticationInd("01")
         .acctNumber(data.PaymentMethod.Card.PAN.PAN)
-        .email("tom@paynetworx.com")
+        .email("test@example.com")
         .purchaseDate(util.Now())
           .acctID(start_body.acctId)
           .threeDSRequestorURL(window.location.href)
           .purchaseAmount((parseFloat(data.Amount.Total as string)*Math.pow(10, cc.code(data.Amount.Currency).digits)).toString())
           .purchaseCurrency(cc.code(data.Amount.Currency).number)
           .purchaseExponent(cc.code(data.Amount.Currency).digits.toString())
+          .cardExpiryDate("2901")
+          .billAddrCountry("840")
+          .billAddrCity("Roswell")
+          .billAddrState("GA")
+          .billAddrPostCode("74432")
+          .billAddrLine1("3493 Camel Back Road")
+          .shipAddrCountry("840")
+          .shipAddrCity("Roswell")
+          .shipAddrState("GA")
+          .shipAddrPostCode("74432")
+          .shipAddrLine1("3493 Camel Back Road")
+          .cardholderName("john doe")
+          .mobilePhone({
+            cc:"1",
+            subscriber:"9186189931"
+          })
   };
   const usdk = new ShellThreeDS2Service();
   const initializeSpec = new InitializeSpec();
