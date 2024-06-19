@@ -12,15 +12,15 @@
 ### Running the demo
 PLEASE NOTE: this is for demo purposes only, do not run real live cards through this systems. Also the code does not have all error handling and features a full production setup would need
 1. copy config.example.json to config.json and edit file with credentials and urls: your paynetworx rep can provide these for you. 
-1. start server
+2. start server
 ```bash
 npm run serve
 ```
-2. start bundler
+3. start bundler
 ```bash
 npm run watch
 ```
-3. go to localhost:8080
+4. go to localhost:8080
 
 ### Phase 1: Webpage
 On the merchants webpage the customer will input their data. The  web page will also need to include the msignia usdk script (provided by paynetworx)
