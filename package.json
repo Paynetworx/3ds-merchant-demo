@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "serve": "npx ts-node-esm server.ts",
+    "serve": "bun server.ts",
     "watch": "bun build --watch index.ts --outdir dist/"
   },
   "author": "",
